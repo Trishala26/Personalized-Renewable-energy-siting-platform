@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation Result</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+        
+        ul li::before {
+            content: "•";
+            color: #007bff;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        ul li:last-child {
+            margin-bottom: 0;
+        }
+        #head{
+            text-align: center;
+            color: #012c10;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="head">Estimation Result</h1>
+    <h2>Items within Budget: {{ result.Items_within_budget }}</h2>
+    
+    <h2>Without Installation Cost:</h2>
+    {% if result.Without_installation_cost %}
+        <ul>
+            {% if result.Without_installation_cost.Maximum_panels %}
+                <li>Maximum Panels: {{ result.Without_installation_cost.Maximum_panels }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_inverters %}
+                <li>Maximum Inverters: {{ result.Without_installation_cost.Maximum_inverters }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_batteries %}
+                <li>Maximum Batteries: {{ result.Without_installation_cost.Maximum_batteries }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_wind_turbines %}
+                <li>Maximum Wind Turbines: {{ result.Without_installation_cost.Maximum_wind_turbines }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_capacity_per_turbine %}
+                <li>Maximum Capacity per Turbine: {{ result.Without_installation_cost.Maximum_capacity_per_turbine }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_turbine %}
+                <li>Maximum Turbine: {{ result.Without_installation_cost.Maximum_turbine }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_shaft %}
+                <li>Maximum Shaft: {{ result.Without_installation_cost.Maximum_shaft }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_rotor %}
+                <li>Maximum Rotor: {{ result.Without_installation_cost.Maximum_rotor }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_stator %}
+                <li>Maximum Stator: {{ result.Without_installation_cost.Maximum_stator }}</li>
+            {% endif %}
+            {% if result.Without_installation_cost.Maximum_generator %}
+                <li>Maximum Generator: {{ result.Without_installation_cost.Maximum_generator }}</li>
+            {% endif %}
+        </ul>
+    {% endif %}
+
+    <h2>Considering Installation Cost:</h2>
+    {% if result.Considering_installation_cost %}
+        <ul>
+            {% if result.Considering_installation_cost.Maximum_panels_with_installation %}
+                <li>Maximum Panels with Installation: {{ result.Considering_installation_cost.Maximum_panels_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_inverters_with_installation %}
+                <li>Maximum Inverters with Installation: {{ result.Considering_installation_cost.Maximum_inverters_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_batteries_with_installation %}
+                <li>Maximum Batteries with Installation: {{ result.Considering_installation_cost.Maximum_batteries_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_wind_turbines_with_installation %}
+                <li>Maximum Wind Turbines with Installation: {{ result.Considering_installation_cost.Maximum_wind_turbines_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Total_maximum_capacity %}
+                <li>Total Maximum Capacity: {{ result.Considering_installation_cost.Total_maximum_capacity }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_turbine_with_installation %}
+                <li>Maximum Turbine with Installation: {{ result.Considering_installation_cost.Maximum_turbine_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_shaft_with_installation %}
+                <li>Maximum Shaft with Installation: {{ result.Considering_installation_cost.Maximum_shaft_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_rotor_with_installation %}
+                <li>Maximum Rotor with Installation: {{ result.Considering_installation_cost.Maximum_rotor_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_stator_with_installation %}
+                <li>Maximum Stator with Installation: {{ result.Considering_installation_cost.Maximum_stator_with_installation }}</li>
+            {% endif %}
+            {% if result.Considering_installation_cost.Maximum_generator_with_installation %}
+                <li>Maximum Generator with Installation: {{ result.Considering_installation_cost.Maximum_generator_with_installation }}</li>
+            {% endif %}
+        </ul>
+    {% endif %}
+</body>
+</html>
